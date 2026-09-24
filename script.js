@@ -1,0 +1,4 @@
+const gift=document.getElementById('gift'),final=document.getElementById('final'),music=document.getElementById('music'),musicBtn=document.getElementById('musicBtn');
+gift.onclick=()=>{final.classList.add('show');final.scrollIntoView({behavior:'smooth',block:'center'});flowers(70)};
+musicBtn.onclick=async()=>{try{if(music.paused){await music.play();musicBtn.textContent='♫ إيقاف الموسيقى'}else{music.pause();musicBtn.textContent='♫ تشغيل الموسيقى'}}catch(e){alert('ضعي ملف Ultraviolence.mp3 بجانب index.html أولًا 🎵')}};
+function flowers(n){let s=['🌸','🌷','✿','❀','🩷','🎀'];for(let i=0;i<n;i++){let x=document.createElement('div');x.className='petal';x.textContent=s[Math.floor(Math.random()*s.length)];x.style.left=Math.random()*100+'vw';x.style.fontSize=12+Math.random()*18+'px';x.style.animationDuration=2.5+Math.random()*3.5+'s';document.body.appendChild(x);setTimeout(()=>x.remove(),7000)}}
